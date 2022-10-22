@@ -1,0 +1,59 @@
+
+<%- include("partials/header"); -%>
+
+<div class=" pt-10  h-full">
+
+  <!-- compose button div -->
+  <div class="px-8 pb-8 md:px-16 flex justify-between items-center">
+    
+    <div class="w-40 md:w-auto">
+      <h1 class="text-purple-600 text-xl md:text-3xl mb-1">Home</h1>
+      <p class="text-xs md:text-sm text-indigo-700"> <%= startingContent %> </p>
+    </div>
+
+    <div>
+      <a class="mr-auto" href="/compose">
+        <button type="button" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 
+        focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none ">Compose</button>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- loop for posts div -->
+  <%  posts.forEach(function(post){ %>
+
+  <div class="px-5 md:px-16">
+    <div class="flex flex-col justify-center relative overflow-hidden p-4 sm:p-8">
+      <div class="">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+          <div class="relative px-7 py-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
+            <img class="h-8 pt-2" src="images/iconCheck.png" alt="">
+            <div class="space-y-1">
+              <p class="text-purple-500 text-2xl"><%=post.title%></p>
+              <p class="block text-gray-400 text-sm group-hover:text-slate-800 transition duration-200 mb-2" target="_blank"> by <%=post.name%> </p>
+              <p class="block text-gray-700 group-hover:text-slate-800 transition duration-200 pt-5 " target="_blank"><%=post.content.substring(0, 100) + " ..."%>
+                <a class="text-blue-900 font-semibold leading-relaxed" href="/posts/<%=post._id%>">Read More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>  
+
+  <% }) %>
+
+  
+  
+  <!-- footer div -->
+  <div class="mt-5">
+    <%- include("partials/footer"); -%>
+  </div>
+
+</div>
+
+
+
+

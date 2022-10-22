@@ -1,0 +1,46 @@
+
+<%- include("partials/header"); -%>
+    <!-- <h1>Compose</h1>
+    <form class="" action="/compose" method="post">
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" type="text" name="writerName">
+        <label>Title</label>
+        <input class="form-control" type="text" name="postTitle">
+        <label>Post</label>
+        <textarea class="form-control" name="postBody" rows="5" cols="30"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" name="button">Publish</button>
+    </form> -->
+
+
+    <section class="bg-white h-screen ">
+      <div class="pt-5 lg:pt-12 px-4 mx-auto max-w-screen-md">
+          <h2 class="mb-7 text-4xl tracking-tight font-extrabold text-center text-purple-700">Compose</h2>
+          <form action="/compose" method="post" class="space-y-8">
+            <div class="form-group">
+              <div>
+                  <label class="block mb-2 text-md font-medium text-purple-700">Your Name</label>
+                  <input name="writerName" type="text" class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="Enter Name" required>
+              </div>
+              <div>
+                <label class="block pt-5 mb-2 text-md font-medium text-purple-700">Title</label>
+                <input name="postTitle" type="text" class="form-control shadow-sm bg-gray-50 border 
+                border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 
+                block w-full p-2.5" placeholder="Enter Title" required>
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block pt-5 mb-2 text-md font-medium text-purple-700">Body</label>
+                <textarea name="postBody" type="text" class="form-control shadow-sm bg-gray-50 border
+                 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 
+                 block w-full p-2.5" placeholder="Enter text ..." rows="5" cols="30" required></textarea>
+              </div>
+            </div>
+              <button name="button" type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg 
+              bg-purple-700 hover:bg-purple-800 sm:w-fit focus:ring-4 focus:outline-none 
+              focus:ring-primary-300">Publish</button>
+          </form>
+      </div>
+    </section>
+
+<%- include("partials/footer"); -%>
