@@ -7,8 +7,6 @@ const ejs = require("ejs");
 const _ = require("lodash");
 
 const homeStartingContent = "Write something by clicking on the compose button.";
-const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque.";
-const contactContent = "Feel free to connect with us. Together we can build great things.";
 
 const app = express();
 
@@ -21,8 +19,6 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://admin-akash:akash1999@cluster0-shard-00-00.vqrdq.mongodb.net:27017,cluster0-shard-00-01.vqrdq.mongodb.net:27017,cluster0-shard-00-02.vqrdq.mongodb.net:27017/?ssl=true&replicaSet=atlas-4y9vag-shard-0&authSource=admin&retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
 
-//let posts = [];
-
 // creating schema for db
 
 const postSchema = new mongoose.Schema({
@@ -34,9 +30,6 @@ const postSchema = new mongoose.Schema({
 // creating model for database
 
 const Post = mongoose.model("Post", postSchema);
-
-
-
 
 
 app.get("/", function(req, res){
@@ -55,13 +48,11 @@ app.get("/", function(req, res){
 });
 
 app.get("/about", function(req, res){
-  res.render("about", {aboutContent: aboutContent});
+  res.render("about");
 });
 
 app.get('/contact', function(req, res) {
-  res.render('contact', {
-    contactParagraph: contactContent
-  });
+  res.render('contact');
 });
 
 app.get("/compose", function(req, res){
