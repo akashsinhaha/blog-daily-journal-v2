@@ -17,7 +17,7 @@ app.use(express.static("public"));
 
 // connecting mongoose
 
-mongoose.connect("mongodb://admin-akash:akash1999@cluster0-shard-00-00.vqrdq.mongodb.net:27017,cluster0-shard-00-01.vqrdq.mongodb.net:27017,cluster0-shard-00-02.vqrdq.mongodb.net:27017/?ssl=true&replicaSet=atlas-4y9vag-shard-0&authSource=admin&retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://akashgov:akashgov1999@cluster0.cfxbo4t.mongodb.net/?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
 
 // creating schema for db
 
